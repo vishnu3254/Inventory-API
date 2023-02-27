@@ -1,0 +1,63 @@
+###create a customer
+POST http://localhost:4000/customer-api/customer
+Content-Type: application/json
+
+{
+  "customer_name":"vardhan",
+  "customer_email":"vardhan@email.com",
+  "address":{
+    "street":"prathrika nagar in hitec city",
+    "city":"Hyderabad",
+    "state":"Telangana",
+    "pincode":500081
+  }
+}
+
+###create a product
+POST http://localhost:4000/product-api/product
+Content-Type: application/json
+
+{
+  "product_name":"house",
+  "product_price":"800"
+}
+
+###create reviews
+POST http://localhost:4000/customer-api/customer-review
+Content-Type: application/json
+
+{
+     "review_date":"2023-02-27",
+      "review_desc":"good product",
+      "customer_id":3,
+      "product_id":3
+   
+}
+
+###Get review
+GET http://localhost:4000/customer-api/reviews/2
+
+
+###create  orders
+POST http://localhost:4000/customer-api/customer-order
+Content-Type:application/json
+
+{
+  "order_date":"2022-09-21",
+  "product_id":5,
+  "customer_id":2
+}
+
+
+### get all customers
+GET http://localhost:4000/customer-api/customer
+
+###get all products
+GET http://localhost:4000/product-api/product
+
+###get customer by customer_id
+GET http://localhost:4000/customer-api/customer-orders/3
+
+###Get review by customer_id
+GET http://localhost:4000/customer-api/customer-reviews/1
+
